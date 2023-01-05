@@ -8,6 +8,9 @@ def canUnlockAll(boxes):
     """
         checks if all boxes can be unlocked
     """
+    if ((type(boxes) is not list) or len(boxes) == 0):
+        return False
+
     unlocked_boxes = [False] * len(boxes)  # set unlock all boxes to False
     unlocked_boxes[0] = True  # first box is always unlocked
     taskes = [0]

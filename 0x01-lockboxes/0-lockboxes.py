@@ -11,14 +11,12 @@ def canUnlockAll(boxes):
     if ((type(boxes) is not list) or len(boxes) == 0):
         return False
 
-    unlocked_boxes = [False] * len(boxes)  # set unlock all boxes to False
-    unlocked_boxes[0] = True  # first box is always unlocked
-    taskes = [0]
-
-    while taskes:  # add or remove task while taskes in not completed
-        boxe = taskes.pop()  # get a next boxe
-        for key in boxes[boxe]:  # for all key insides current box
-            if not unlocked_boxes[key]:  # if box is not unlocked yet
-                unlocked_boxes[key] = True  # set box to unlocked
-                taskes.append(key)  # append unlocked keys to taskes
-    return all(unlocked_boxes)  # like a every method in javascript
+    for k in range(1, len(boxes) - 1):
+        boxes_checked = False
+        for idx in range(len(boxes)):
+            boxes_checked = k in boxes[idx] and k != idx
+            if boxes_checked:
+                break
+        if boxes_checked is False:
+            return boxes_checked
+    return True

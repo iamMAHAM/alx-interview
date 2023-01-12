@@ -1,20 +1,20 @@
 #!/usr/bin/python3
+
 """
 module: calculates the fewest number of
 operations needed
 to result in exactly n H characters
 in the file
 """
-from typing import List
 
 
-def minOperations(n: int):
+def minOperations(n):
     """
     methods to count nomber of operations (copy and paste)
     """
     if n < 2:
         return 0
-    factor_list: List[int] = []
+    factor_list = []
     i = 1
     while n != 1:
         i += 1

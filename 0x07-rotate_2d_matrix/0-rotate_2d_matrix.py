@@ -2,18 +2,17 @@
 """
 Given an n x n 2D matrix, rotate it 90 degrees clockwise.
 """
-from typing import List
 
 
-def rotate_2d_matrix(matrix: List[List[int]]):
+def rotate_2d_matrix(matrix):
     """
     rotates 2d matrix
     """
 
     N: int = len(matrix)
 
-    matrix_copy: List[int] = []
-    copy_row: int = 0
+    matrix_copy = []
+    copy_row = 0
     for column in range(N):
         for row in range((N - 1), -1, -1):
             if column == 0:

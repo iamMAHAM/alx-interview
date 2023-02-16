@@ -16,7 +16,7 @@ def rotate_2d_matrix(matrix: List[List[int]]):
     copy_row: int = 0
     for column in range(N):
         for row in range((N - 1), -1, -1):
-            if column is 0:
+            if column == 0:
                 matrix_copy.append([])
             matrix_copy[copy_row].append(matrix[row][column])
         copy_row += 1
